@@ -109,7 +109,7 @@
     'version': '1.5.0',
     'live_test_url': 'https://demokinetik.kappso.com',
     'depends': ['ks_theme_base', 'website_sale_wishlist', 'website_sale_comparison',
-                'website_sale_stock', 'website_rating','website_crm'],
+                'website_sale_stock', 'website_rating'], # eliminated the 'website_crm'
     # always loaded
     'data': [
         'security/ir.model.access.csv',
