@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <record id="xml_to_invoice_wizard_ext" model="ir.ui.view">
+            <field name="name">xml_to_invoice_wizard_ext</field>
+            <field name="model">xml.import.wizard</field>
+            <field name="inherit_id" ref="prodigia_xml_to_invoice.xml_import_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="replace">
+                    <form>
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="company_id" invisible="0" readonly="1" string="Compañía"/>
+                                    <field name="invoice_type" readonly="1" invisible="1"/>
+                                    <field name="filename" invisible='1'/>
+                                    <field name="uploaded_file" widget='binary' filename='filename'/>
+                                </group>
+                                <group>
+                                    <field name="import_type"/>
+                                    <!--<field name="sat_validation"/>-->
+                                </group>
+                            </group>
+                            <group string="Factura de clientes" attrs="{'invisible':[('invoice_type','=','in_invoice')]}">
+                                <group>
+                                    <field name="cuenta_cobrar_cliente_id"/>
+                                    <field name="cuenta_ingreso_cliente_id"/>
+                                    <field name="invoice_status_customer"/>
+                                    <field name="payment_term_customer_id" attrs="{'invisible':[('invoice_status_customer','!=','abierta')]}"/>
+                                    <!--<field name="payment_journal_customer_id" attrs="{'invisible':[('invoice_status_customer','!=','pagada')]}"/>-->
+                                    <field name="invoice_payment_type_customer" attrs="{'invisible':[('invoice_status_customer','!=','pagada')]}"/>
+                                    <field name="invoice_date_customer" attrs="{'invisible':[('invoice_payment_type_customer','!=','fecha_especifica')], 'required':[('invoice_payment_type_customer','=','fecha_especifica')]}"/>
+                                </group>
+                                <group>
+                                    <!--<field name="warehouse_customer_id" attrs="{'required':[('invoice_type','=','out_invoice')]}"/>
+                                    <field name="journal_customer_id"/>-->
+                                    <!--<field name="line_analytic_tag_customer_ids" widget="many2many_tags"/>-->
+                                    <field name="user_customer_id" attrs="{'required':['|',('invoice_type','=','out_invoice'),('invoice_type','=',False)]}"/>
+                                    <field name="team_customer_id" attrs="{'required':['|',('invoice_type','=','out_invoice'),('invoice_type','=',False)]}"/>
+                                </group>
+                            </group>
+                            <group string="Facturas de proveedor" attrs="{'invisible':[('invoice_type','=','out_invoice')]}">
+                                <group>
+                                    <field name="cuenta_pagar_proveedor_id"/>
+                                    <field name="cuenta_gasto_proveedor_id"/>
+                                    <field name="invoice_status_provider"/>
+                                    <field name="payment_journal_provider_id" attrs="{'invisible':[('invoice_status_provider','!=','pagada')]}"/>
+                                    <field name="payment_term_provider_id" attrs="{'invisible':[('invoice_status_provider','!=','abierta')]}"/>
+                                    <field name="invoice_payment_type_provider" attrs="{'invisible':[('invoice_status_provider','!=','pagada')]}"/>
+                                    <field name="invoice_date_provider" attrs="{'invisible':[('invoice_payment_type_provider','!=','fecha_especifica')], 'required':[('invoice_payment_type_provider','=','fecha_especifica')]}"/>
+                                </group>
+                                <group>
+                                    <field name="warehouse_provider_id"/>
+                                    <field name="journal_provider_id"/>
+                                    <!--<field name="line_analytic_tag_provider_ids" widget="many2many_tags"/>-->
+                                    <field name="user_provider_id"/>
+                                </group>
+                            </group>
+                            <footer>
+                                <button name="validate_bills" type="object" string="Importar" class="oe_highlight"/>
+                                <button special="cancel" string="Cancelar" type="object" class="oe_link oe_inline"/>
+                            </footer>
+                        </sheet>
+                    </form>
+                </xpath>
+                <!--<field name="invoice_type" position="after">
+                    <group string="Cliente">
+                        <field name="invoice_account_id"/>
+                    </group>
+                </field>-->
+            </field>
+        </record>
+
+    </data>
+</odoo>

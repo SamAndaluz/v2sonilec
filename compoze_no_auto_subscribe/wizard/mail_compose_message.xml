@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mail_compose_message_view_form_no_auto_subsription" model="ir.ui.view">
+        <field name="name">mail.compose.message.form</field>
+        <field name="model">mail.compose.message</field>
+        <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+        <field name="arch" type="xml">
+            <field name='subject' position='before'>
+                <field name='subscribe_recipients'
+                       attrs="{'invisible': [('is_log', '=', True)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>

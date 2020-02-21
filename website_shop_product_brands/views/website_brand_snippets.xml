@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="snippet_brand_template" name="Brand Carousel">
+        <div id="brandCarousel" class="carousel slide brand_carousel" data-ride="carousel" data-interval="10000">
+            <div class="carousel-inner" role="listbox">
+                <t t-foreach="website.website_publish_brand()" t-as="brand">
+                    <div t-attf-class="carousel-item #{brand_index == 0 and 'active' or ''}">
+                        <div class="brand_block d-block col-3">
+                            <img t-attf-src="/web/image/product.brand/{{brand.id}}/image/170x170" class="brand_photo img-fluid" t-att-alt="brand.name" />
+                            <div class="text-center brand_name">
+                                <h5><a t-attf-href="/shop?brand={{brand.id}}"><span t-esc="brand.name" /></a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+            <!-- Controls -->
+            <div class="carousel-control-prev" data-target="#brandCarousel" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                <span class="carousel-control-prev-icon"/>
+                <span class="sr-only">Previous</span>
+            </div>
+            <div class="carousel-control-next" data-target="#brandCarousel" data-slide="next" role="img" aria-label="Next" title="Next">
+                <span class="carousel-control-next-icon"/>
+                <span class="sr-only">Next</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="brand_snippet" inherit_id="website.snippets" name="Snippet Brand" >
+        <xpath expr="//div[@id='snippet_structure']//t[@t-snippet][last()]" position="after">
+            <t t-snippet="website_shop_product_brands.snippet_brand_template" t-thumbnail="/website_shop_product_brands/static/src/img/brand_snippet_thumbnail.png" />
+        </xpath>
+    </template>
+
+    <!-- Carousel | .brand_carousel -->
+    <template id="brand_carousel_options" name="Brand Carousel Options" inherit_id="website.snippet_options">
+        <xpath expr="//*[@data-js='background']" position="attributes">
+            <attribute name="data-exclude" add=".brand_carousel" separator=","/>
+        </xpath>
+        <xpath expr="//*[@id='so_main_colorpicker']" position="attributes">
+            <attribute name="data-exclude" add=".brand_carousel" separator=","/>
+        </xpath>
+        <xpath expr="//*[@data-js='colorpicker']" position="attributes">
+            <attribute name="data-exclude" add=".brand_carousel" separator=","/>
+        </xpath>
+        <xpath expr="." position="inside">
+            <div data-js="carousel"
+                data-selector=".brand_carousel.carousel">
+                <div class="dropdown-submenu">
+                    <a tabindex="-2" href="#" class="dropdown-item"><i class="fa fa-clock-o"/>Speed</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="#" class="dropdown-item" role="menuitem" data-interval="1000">1s</a>
+                        <a href="#" class="dropdown-item" role="menuitem" data-interval="2000">2s</a>
+                        <a href="#" class="dropdown-item" role="menuitem" data-interval="3000">3s</a>
+                        <a href="#" class="dropdown-item" role="menuitem" data-interval="5000">5s</a>
+                        <a href="#" class="dropdown-item" role="menuitem" data-interval="10000">10s</a>
+                        <a href="#" class="dropdown-item" role="menuitem" data-interval="0">Disable autoplay</a>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,14 @@
+<!-- Thix file is responsible for editing the Customer Invoice -->
+<odoo>
+    <data>
+      <record id="ct_hide_descr_inv" model="ir.ui.view">
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="model">account.invoice</field>
+        <field name="arch" type="xml">
+        <xpath expr="//sheet[1]/notebook[1]/page[1]/field[1]/tree[1]/field[@name='name']" position="attributes">
+          <attribute name="invisible">True</attribute>
+        </xpath>
+        </field>
+      </record>
+    </data>
+</odoo>
