@@ -38,15 +38,22 @@ class Ks_WebsiteProductGrid(http.Controller):
             ks_slider_id = post.get('id', False)
             ks_slide_rec = request.env['ks_product.slider'].sudo().search([("id", "=", ks_slider_id)], limit=1)
             snippet_name = ks_slide_rec.name
+            if ks_slide_rec.ks_item_selection_method == 'brands':
+                items=ks_slide_rec.ks_items_per_slide_for_brands
+            elif ks_slide_rec.ks_item_selection_method == 'blogs':
+                items = ks_slide_rec.ks_items_per_slide_for_blogs
+            else:
+                items=ks_slide_rec.ks_items_per_slide
             vals.update({
                 "slider_id": "product-owl-id-" + str(ks_slide_rec.id),
                 "grid_name": snippet_name,
                 "loop": ks_slide_rec.ks_loop,
                 "auto_slide": ks_slide_rec.ks_auto_slide,
                 "speed": ks_slide_rec.ks_Speed,
-                "items": ks_slide_rec.ks_items_per_slide_for_brands if ks_slide_rec.ks_item_selection_method == 'brands' else ks_slide_rec.ks_items_per_slide,
+                "items": items ,
                 "navs": ks_slide_rec.ks_nav_links,
                 'template_type': ks_slide_rec.ks_template_type,
+                'blog_template_type': ks_slide_rec.ks_blog_template,
                 'ks_animation': 'box-animation' if ks_slide_rec.ks_is_animation else '',
                 "full_width_class": '' if ks_slide_rec.ks_is_full_width else 'container',
                 'rtl': request.env['res.lang'].search([('code', '=', request.env.lang)]).direction == 'rtl'
@@ -71,8 +78,8 @@ class Ks_WebsiteProductGrid(http.Controller):
             for brand in ks_brands_slider:
                     values = {
                         'brand_name': brand.name,
-                        'brand_img': "/web/image/ks_product_manager.ks_brand/" + str(brand['id']) + "/ks_image",
-                        'brand_logo': "/web/image/ks_product_manager.ks_brand/" + str(brand['id']) + "/ks_brand_logo",
+                        'brand_img': "/web/image/ks_product_manager.ks_brand/" + str(brand['id']) + "/ks_image/330x300",
+                        'brand_logo': "/web/image/ks_product_manager.ks_brand/" + str(brand['id']) + "/ks_brand_logo/150x150",
                         'brand_id': brand.id,
                         'brand_discount': brand.ks_brand_discount,
                         'url': "/shop?filter=brand_"+str(brand.name),
@@ -94,20 +101,23 @@ class Ks_WebsiteProductGrid(http.Controller):
                     if ks_blog_url != "none":
                         # ks_blog_url = ks_blog_url.split("(")[1]
                         ks_blog_url_inner = ks_blog_url.split("(")[1]
-                        ks_blog_url_sanitized = ks_blog_url_inner.split(")")[0]
+                        ks_blog_url_sanitized = ks_blog_url_inner.split(")")[0]+'/330x330'
                 values = {
                     'ks_blog_url': ks_blog_url_sanitized,
                     'ks_create_date': display_date,
                     'ks_name': blog.name,
                     'ks_Subtitle': blog.subtitle,
                     'id': blog.id,
+                    'author_image': "/web/image/blog.post/" + str(blog.id) + "/author_avatar",
+                    'blog_name': blog.blog_id.name,
+                    'author_name': blog.author_id.name,
                     'ks_blog_content': blog.teaser,
                     'ks_link_redirect': ks_link_redirect
                 }
                 ks_blogs.append(values)
         if ks_category_slider:
             for prods in ks_category_slider:
-                ks_img_url = "/web/image/product.public.category/" + str(prods.id) + "/image"
+                ks_img_url = "/web/image/product.public.category/" + str(prods.id) + "/image/330x330"
                 categ_url = ("/shop/category/%s" % slug(prods))
                 values = {
                     'name': prods.name,
@@ -129,7 +139,7 @@ class Ks_WebsiteProductGrid(http.Controller):
             for prods in ks_products:
                 if prods.is_published:
                     ks_product_var_id = prods['product_variant_id'].id
-                ks_img_url = "/web/image/product.template/" + str(prods['id']) + "/image"
+                ks_img_url = "/web/image/product.template/" + str(prods['id']) + "/image/330x330"
                 base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
                 if (prods.website_public_price == 0):
                     per_dis = 0
@@ -215,7 +225,7 @@ class Ks_WebsiteProductMultiTabs(http.Controller):
                 for prods in ks_products_tab.ks_product_template_sliders:
                     if prods.is_published:
                         ks_product_var_id = prods['product_variant_id'].id
-                    ks_img_url = "/web/image/product.template/" + str(prods['id']) + "/image"
+                    ks_img_url = "/web/image/product.template/" + str(prods['id']) + "/image/330x330"
                     base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
                     if (prods.website_public_price == 0):
                         per_dis = 0
@@ -280,7 +290,7 @@ class Ks_WebsiteRecentlyViewedProducts(http.Controller):
                 if not index >= 10:
                  if prods.is_published:
                     ks_product_var_id = prods['product_variant_id'].id
-                    ks_img_url = "/web/image/product.template/" + str(prods['id']) + "/image"
+                    ks_img_url = "/web/image/product.template/" + str(prods['id']) + "/image/330x330"
                     if (prods.website_public_price == 0):
                         per_dis = 0
                     else:

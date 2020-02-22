@@ -67,6 +67,11 @@
         }
     }
 
+     #my_cart_2 .badge {
+        top: -7px;
+        right: -14px;
+      }
+
     &.affixed {
         display: flex;
         background: rgba(0, 0, 0, 0.6) !important;
@@ -78,10 +83,7 @@
                 padding: 0px;
             }
         }
-        #my_cart_2 .badge {
-            top: -7px;
-            right: -14px;
-        }
+
          #my_wish .nav-link{
             position: relative;
          }
@@ -121,13 +123,16 @@
         .ks-header-6-logo{
             margin-right: auto;
             max-width: 180px;
+            flex: 0 0 180px;
             padding: 0px;
             @media(max-width: 480px){
                 max-width: 120px;
+                flex: 0 0 120px;
             }
         }
         .ks-header-6-main{
             max-width: 45px !important;
+            flex: 0 0 45px !important;
             order: 2;
             text-align: center;
             margin-left: 0px;
@@ -135,16 +140,24 @@
         &.ks-header-6 .ks-header-6-items{
             background: transparent;
             max-width: 200px;
+            flex: 0 0 200px;
+            @media(max-width: 575px){
+                max-width: 140px;
+                flex: 0 0 140px;
+            }
             @media(max-width: 375px){
                 max-width: 120px;
+                flex: 0 0 120px;
             }
             order: 1;
             padding: 0px;
              .remove_after_content{
                 margin-right: 0px;
                 max-width: 60px;
+                flex: 0 0 60px;
                 @media(max-width: 375px){
                  max-width: 30px;
+                 flex: 0 0 30px;
                 }
             }
         }
@@ -186,9 +199,6 @@
     .ks-header-2-main #top_menu > li > a span:after,
     .ks-header-5 #top_menu > li > a span:after{
         border-color: #fff;
-    }
-    .navbar-brand img{
-        filter: invert(1);
     }
     .ks-header-offer-container{
         display: none;
@@ -345,6 +355,23 @@ body.ks_transparent_header{
     .ks_transparent_header{
         .ks-custom-login{
             color: $white;
+        }
+    }
+}
+.affixed.ks-header-11 .fa-shopping-cart {
+    margin-top: -1px;
+}
+
+.ks-header-11.affix{
+    .ks-header-6-search{
+        display: none;
+    }
+}
+
+@media(max-width:  991px){
+    .ks-header-11.o_header_affix{
+        .ks-header-6-main{
+            margin-left: 0px;
         }
     }
 }

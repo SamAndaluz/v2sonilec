@@ -2,7 +2,7 @@
     <t t-name="snippet_featured">
         <section class="py-lg-5 py-3 ks-featured-product-grid">
             <h4 class="theme__heading" >Featured</h4>
-            <div id="product_btn_group" class="text-center">
+            <div id="product_btn_group" class="text-center" contenteditable="false">
                 <ul class="nav nav-tabs d-flex justify-content-center" role="tablist">
                     <t t-if="new_arr_id_count">
                         <li class="tabs-li nav-item">
@@ -44,7 +44,7 @@
             </div>
             <div class="tab-content">
                 <div id="featured_row_new_arrivals"
-                     class=" tab-pane active row no-gutters  new_arriavals">
+                     class=" tab-pane active row no-gutters  new_arriavals" contenteditable="false">
                     <div class="d-flex flex-wrap products-carousel">
                         <t t-foreach="products" t-as="prods">
                             <t t-if="prods.is_new_arrvd">
@@ -186,7 +186,7 @@
                     </div>
                 </div>
                 <div id="featured_row_trendy"
-                     class=" tab-pane row no-gutters trendy_styles">
+                     class=" tab-pane row no-gutters trendy_styles" contenteditable="false">
                     <div class="d-flex  flex-wrap ks_custom_featured">
                         <t t-foreach="products" t-as="prods">
                             <t t-if="prods.is_trendy">
@@ -329,7 +329,7 @@
                     </div>
                 </div>
                 <div id="featured_row_Most_popular"
-                     class=" tab-pane row no-gutters  popular">
+                     class=" tab-pane row no-gutters  popular" contenteditable="false">
                     <div class="d-flex  flex-wrap ks_custom_featured">
                         <t t-foreach="products" t-as="prods">
                             <t t-if="prods.is_ks_popular">
@@ -472,7 +472,7 @@
                     </div>
                 </div>
                 <div id="featured_row_classics"
-                     class=" tab-pane row no-gutters  classics">
+                     class=" tab-pane row no-gutters  classics" contenteditable="false">
                     <div class="d-flex  flex-wrap ks_custom_featured">
                         <t t-foreach="products" t-as="prods">
                             <t t-if="prods.is_ks_classics">

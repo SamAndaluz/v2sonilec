@@ -58,10 +58,18 @@ var Qweb = core.qweb;
             }
              ajax.post('/deal_of_day/data/second/create', data_msg).then(function(seconds){
                      if(seconds.seconds){
+                        this.$target.parents().eq(3).removeClass('d-none')
                         this.ks_handlevideoRecords(seconds.seconds,data_msg,this.$target);
                      }
                      else{
-                        return;
+                        if(data_msg["date_end"].length){
+                             this.$target.parents().eq(3).remove();
+                             return
+                        }
+                        else{
+                            return;
+                        }
+
                      }}.bind(this))
         },
     });

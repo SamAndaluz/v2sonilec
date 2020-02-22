@@ -318,10 +318,17 @@
         color: rgba(0,0,0,0.6);
         font-size: 20px;
         font-weight: 600;
+         @media(max-width: 767px){
+            font-size: 13px;
+            font-weight: 500;
+         }
         padding: 0;
 
         span {
              padding: 8px 24px;
+             @media(max-width: 767px){
+                padding: 8px 14px;
+             }
         }
 
         &:after {
@@ -351,6 +358,9 @@
 
     .nav-tabs {
        padding: 0 20px 5px;
+       @media(max-width: 767px){
+           padding: 0 0px 5px;
+       }
        border-width: 2px;
        justify-content: center;
     }
@@ -369,6 +379,48 @@
         object-fit: cover;
     }
 }
+@media(max-width: 767px){
+    .ks-food-dining-set{
+        text-align: center;
+        .ks-food-dining-img{
+            width: 80px;
+        }
+         .ks-food-dining-name.h2{
+            font-size: 1.4rem;
+         }
+         .ks-food-dining-info.ml-3{
+            margin-left: 20px !important;
+            text-align: left;
+            width: calc(100% - 100px)
+         }
+         .ks-food-dining-price{
+            margin: 0 auto;
+         }
+    }
+}
+
+@media(max-width: 375px){
+    .ks-food-dining-set{
+        text-align: center;
+        .ks-food-dining-img {
+           margin: 0 auto 10px auto;
+           width: 100%;
+         }
+         .ks-food-dining-name.h2{
+            font-size: 1.4rem;
+         }
+         .ks-food-dining-info.ml-3{
+            margin-left: 0px !important;
+            text-align: center;
+            width: 100%;
+         }
+         .ks-food-dining-price{
+            margin: 10px auto 0 auto;
+            width: 100%;
+         }
+    }
+}
+
 
 .ks-food-bredcrumb {
     letter-spacing: 1px;
@@ -1412,6 +1464,7 @@
     width: 100%;
     transform: translateZ(50px);
     padding: 30px;
+    -webkit-backface-visibility: hidden;
 
     p {
         color: $black;
@@ -1787,6 +1840,7 @@
     position: absolute;
     bottom: 0;
     padding: 20px 50px;
+    color: #141f1e !important;
 
     @media (max-width: 575px) {
         top: 50%;

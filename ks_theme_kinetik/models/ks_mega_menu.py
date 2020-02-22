@@ -22,6 +22,7 @@ class Ks_WebsiteMegaMenu(models.Model):
     ks_products_ids = fields.Many2many("product.template", string="Products",domain=[('website_published','=',True)])
     ks_product_brand_ids = fields.Many2many('ks_product_manager.ks_brand', string='Brands')
     ks_is_category_tab_layout = fields.Boolean(string='Set Tab Layout For Categories')
+    ks_show_sub_categories = fields.Boolean(string='Display Sub Categories', default=True)
 
     # Slider Configuration
     ks_is_slider = fields.Selection(
@@ -48,7 +49,7 @@ class Ks_WebsiteMegaMenu(models.Model):
     ks_font_color_main_cat = fields.Char(default="#000000", string="Main Heading Color")
     ks_font_color_sub_cat = fields.Char(default="#000000", string="Sub Heading Color")
     ks_set_number_of_columns = fields.Selection([('two', '2'), ('three', '3'), ('four', '4'), ('five', '5'), ('six  ', '6')],
-        string='Set Number of Column', default='four')
+        string='Set Number of Column', default='four', required=True)
 
     # ToDo Remove this field when create a new database
     ks_font_color = fields.Char()
@@ -58,7 +59,7 @@ class Ks_WebsiteMegaMenu(models.Model):
     def ks_get_image_url(self):
         for rec in self:
             if rec.ks_is_background_image and rec.ks_background_image:
-                return '/web/image/website.menu/' + str(rec.id) + '/ks_background_image/'
+                return '/web/image/website.menu/' + str(rec.id) + '/ks_background_image/330x330'
 
             else:
                 return ""
@@ -66,7 +67,7 @@ class Ks_WebsiteMegaMenu(models.Model):
     def ks_get_side_image_url(self):
         for rec in self:
             if rec.ks_side_image and rec.ks_side_image:
-                return '/web/image/website.menu/' + str(rec.id) + '/ks_side_image/'
+                return '/web/image/website.menu/' + str(rec.id) + '/ks_side_image/330x330'
 
             else:
                 return ""

@@ -227,3 +227,30 @@ footer {
     }
   }
 }
+
+#footer{
+    .ks_address {
+        .fa-map-marker{
+             display: none;
+        }
+    }
+}
+
+
+#footer .lang_dropdown ul li a.dropdown-item {
+    color: #141f1e;
+}
+.ks_footer_2{
+    margin-right: 10px;
+}
+
+.ks-footer-lang {
+    padding-left: 45px;
+}
+
+#footer_layout_3 {
+    .lang_dropdown {
+        display: inline-block;
+        margin-left: 24px;
+    }
+}

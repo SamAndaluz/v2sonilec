@@ -35,13 +35,22 @@
             flex: 25%;
             max-width: 25%;
             z-index: 1;
-            border: 1px solid #eee;
-            padding: 10px 0;
+            border: 1px solid #e9e9ed;
+            border-left: none;
+            padding: 0px 0;
             margin-top: 16px;
+            .filter-heading-panel{
+                display: none;
+            }
         }
     }
 
     .filter-selectedFilterContainer + .row {
         margin: 0 -15px 0 10px !important;
     }
+}
+
+.ks-filter-price-menu{
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

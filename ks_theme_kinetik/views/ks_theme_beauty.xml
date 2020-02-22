@@ -1069,7 +1069,7 @@
                     <section class="container ks-sliding-products py-5">
                         <h4 class="theme__heading mb-5">New Sofa Sets</h4>
                         <a class="ks-product-set d-flex align-items-center mb-5 no-animation" href="#">
-                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/sofa/sofa-1.png" alt="product img" />
+                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/sofa/sofa-1.jpg" alt="product img" />
                             <div class="ks-product-about position-relative">
                                 <h2>LIVERPOOL SOFA</h2>
                                 <div class="ks-product-about-sub" >
@@ -1084,10 +1084,10 @@
                                     3 seats sofa length- 85.5"
                                 </div>
                             </div>
-                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/sofa/sofa-2.png" alt="product img" />
+                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/sofa/sofa-2.jpg" alt="product img" />
                         </a>
                         <a class="ks-product-set d-flex align-items-center pt-5 no-animation" href="#">
-                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/sofa/sofa-3.png" alt="product img" />
+                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/sofa/sofa-3.jpg" alt="product img" />
                             <div class="ks-product-about position-relative">
                                 <h2>Adelaide Sofa</h2>
                                 <div class="ks-product-about-sub">
@@ -1098,7 +1098,7 @@
                     </section>
                     <!-- Banner -->
                     <section class="container-lg m-auto py-4">
-                        <section class="ks-deal-sales ks-furniture-deal no-animation" style="background: url('/ks_theme_kinetik/static/src/landing-pages-images/furniture-img/deal.png');">
+                        <section class="ks-deal-sales ks-furniture-deal no-animation" style="background: url('/ks_theme_kinetik/static/src/landing-pages-images/furniture-img/deal.jpg');">
                             <div class="row h-100">
                                 <div class="col-lg-6 ml-auto d-flex justify-content-center align-items-center flex-wrap">
                                     <div class="right-panel">
@@ -3051,7 +3051,7 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="team-member position-relative">
                                         <div class="team-img position-relative">
-                                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/team-v1/img-1.png" alt="team member" class="img-fluid" />
+                                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/team-v1/img-1.jpg" alt="team member" class="img-fluid" />
                                         </div>
                                         <div class="team-hover">
                                             <div class="desk">
@@ -3097,7 +3097,7 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="team-member position-relative">
                                         <div class="team-img position-relative">
-                                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/team-v1/img-3.png" alt="team member" class="img-fluid" />
+                                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/team-v1/img-3.jpg" alt="team member" class="img-fluid" />
                                         </div>
                                         <div class="team-hover">
                                             <div class="desk">
@@ -3120,7 +3120,7 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="team-member position-relative">
                                         <div class="team-img position-relative">
-                                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/team-v1/img-4.png" alt="team member" class="img-fluid" />
+                                            <img src="/ks_theme_kinetik/static/src/static-snippet-images/team-v1/img-4.jpg" alt="team member" class="img-fluid" />
                                         </div>
                                         <div class="team-hover">
                                             <div class="desk">
@@ -5105,7 +5105,7 @@
             </t>
         </template>
 
-          <template id="ks_theme_hotel" name="Kinetik Book Hotel" >
+          <template id="ks_theme_hotel" name="Kinetik Hotel" >
             <t t-call="website.layout">
                 <div class="oe_structure oe_empty">
                     <section class="ks_food_hero ks-hotel-hero overflow-hidden" >
@@ -5261,7 +5261,7 @@
                             <h4 class="text-shadow mb-5 ks-heading-large" >  Dining &amp; Bar </h4>
                         </div>
                         <div class="row" >
-                            <div class="col-lg-6 p-xl-5 p-4 ks-hotel-menu  wow slideInLeft" data-wow-duration="1s" data-wow-delay="0.5s" >
+                            <div class="col-lg-6 p-xl-5 p-2 ks-hotel-menu  wow slideInLeft" data-wow-duration="1s" data-wow-delay="0.5s" >
                                 <nav >
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                         <a class="nav-item nav-link mt-3 active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
@@ -5504,7 +5504,7 @@
                                 <h4 class="text-shadow mb-5 ks-heading-large" >  Our Satisfied Guests </h4>
                             </div>
                             <div class="row"  >
-                                <div class="col-lg-4  mb-4 mb-lg-0 px-4 wow rotateInDownLeft" data-wow-duration="1s" data-wow-delay="0.5s" >
+                                <div class="col-lg-4  mb-4 mb-lg-0 px-lg-4 wow rotateInDownLeft" data-wow-duration="1s" data-wow-delay="0.5s" >
                                     <div class="bg-white p-lg-5 p-4 text-center ks-hotel-card-effect" >
                                         <img src="/ks_theme_kinetik/static/src/static-snippet-images/testinomial_images/face-1.jpg" class="rounded-circle" />
                                         <div class="font-24 my-2" >Brian Doe</div>

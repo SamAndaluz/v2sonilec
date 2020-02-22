@@ -37,8 +37,19 @@
                                                  itemprop="image" t-field="product.image"
                                                  t-options="{'widget': 'image', 'class': 'product_detail_img', 'alt-field': 'name', 'zoom': 'image', 'unique': product['__last_update']}"/>
                                              <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
-                                                 <div class="carousel-item" t-field="pimg.image"
-                                                     t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image" }'/>
+                                            <t t-set="attachment_id" t-value="request.env['ir.attachment'].search([('res_field', '=', 'product_video'), ('res_id', '=', pimg.id)]).id" />
+                                            <t t-if="attachment_id">
+                                                <div class="carousel-item">
+                                                    <iframe t-att-id="pimg.id" class="embed-responsive-item"
+                                                            t-att-src="'/web/content/' + str(attachment_id)"
+                                                            allowFullScreen="true" frameborder="0" autoplay="1"
+                                                            allow="autoplay"/>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div class="carousel-item" t-field="pimg.image"
+                                                 t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image" }'/>
+                                            </t>
                                             </t>
 <!--                                                    </a>-->
                                     </div>
@@ -71,14 +82,25 @@
                                                  t-attf-src="/web/image/product.template/{{product.id}}/image/90x90"
                                                  t-att-alt="product.name"/>
                                     </li>
-                                    <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
-                                        <li data-target="#o-carousel-product"
-                                            t-att-data-slide-to="pimg_index + (variant_img and 2 or 1)">
-                                            <img class="img img-fluid"
-                                                 t-attf-src="/web/image/product.image/{{pimg.id}}/image/90x90"
-                                                 t-att-alt="pimg.name"/>
-                                        </li>
-                                    </t>
+<!--                                    <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">-->
+<!--                                        <li data-target="#o-carousel-product"-->
+<!--                                            t-att-data-slide-to="pimg_index + (variant_img and 2 or 1)">-->
+<!--                                            <img class="img img-fluid"-->
+<!--                                                 t-attf-src="/web/image/product.image/{{pimg.id}}/image/90x90"-->
+<!--                                                 t-att-alt="pimg.name"/>-->
+<!--                                        </li>-->
+<!--                                    </t>-->
+                                     <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
+                                    <li data-target="#o-carousel-product" class="ks-vs-img ks_active_variant_image"
+                                        t-att-data-slide-to="pimg_index + (variant_img and 2 or 1)">
+                                        <t t-set="attachment_id" t-value="request.env['ir.attachment'].search([('res_field', '=', 'product_video'), ('res_id', '=', pimg.id)]).id"/>
+                                        <img class="img img-fluid"
+                                             t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90"
+                                             t-att-alt="pimg.name"/>
+                                        <i t-if="attachment_id"
+                                           class="fa fa-2x fa-play-circle-o o_product_video_thumb"/>
+                                    </li>
+                                </t>
                                 </ol>
                             </div>
                         </div>
@@ -127,11 +149,11 @@
 <!--                                <br/>-->
 <!--                                Buy now, get in 2 days-->
 <!--                            </p>-->
-                        </div>
-                        <div class="col-12">
+                             <div class="col-12">
                             <div class="o_not_editable">
                                 <p t-field="product.description_sale"/>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </section>

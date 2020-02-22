@@ -182,28 +182,6 @@
                         </div>
                     </t>
                 </div>
-                <!--<ul t-if="products.pager and products.pager['page_count'] > 1"-->
-                    <!--t-attf-class="#{ classname or '' } pagination pagination-btm justify-content-center mt-md-4 mt-3 #{_classes}"-->
-                    <!--t-att-style="style or None">-->
-                    <!--<li t-attf-class="page-item ks-pager-prev">-->
-                        <!--<a t-att-href="None" class="page-link">Prev</a>-->
-                    <!--</li>-->
-                    <!--<t t-foreach="products.pager['pages']" t-as="page">-->
-                        <!--<li t-attf-class="page-item ks-pager-items">-->
-                            <!--<t t-if="page['num'] == products.pager['active_page']">-->
-                                <!--<div class="ks_active_pager">-->
-                                    <!--<a t-att-href="page['url']" class="page-link" t-raw="page['num']"></a>-->
-                                <!--</div>-->
-                            <!--</t>-->
-                            <!--<t t-else="">-->
-                                <!--<a t-att-href="page['url']" class="page-link" t-raw="page['num']"></a>-->
-                            <!--</t>-->
-                        <!--</li>-->
-                    <!--</t>-->
-                    <!--<li t-attf-class="page-item ks-pager-nxt">-->
-                        <!--<a t-att-href="None" class="page-link">Next</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
             </div>
         </section>
     </t>

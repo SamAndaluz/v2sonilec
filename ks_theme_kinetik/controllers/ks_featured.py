@@ -36,7 +36,7 @@ class WebsiteShopFeatured(http.Controller):
             is_ks_popular = ks_popular.id in prods.ks_product_tags.ids
             is_ks_classics = ks_classics.id in prods.ks_product_tags.ids
 
-            ks_img_url = "/web/image/product.template/" + str(prods.id) + "/image"
+            ks_img_url = "/web/image/product.template/" + str(prods.id) + "/image/330x330"
             ks_product_var_id = prods['product_variant_id'].id
 
             is_ks_wishlist = request.website.viewref('website_sale_wishlist.add_to_wishlist').active

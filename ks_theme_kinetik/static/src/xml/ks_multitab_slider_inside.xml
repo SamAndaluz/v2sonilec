@@ -1,7 +1,7 @@
 <templates>
     <t t-name="snippet_multi_tab">
         <section class="py-lg-5 py-3">
-            <div id="product_btn_group" class="text-center">
+            <div id="product_btn_group" class="text-center" contenteditable="false">
                 <ul class="nav nav-tabs d-flex justify-content-center" role="tablist">
                     <t t-foreach="products.tab_names" t-as="tab">
                         <li t-att-class="'tabs-li nav-item '+'ks_tab_list'+products.slider_id">
@@ -19,7 +19,7 @@
                     </t>
                 </ul>
             </div>
-            <div class="tab-content mt-4 mt-md-5">
+            <div class="tab-content mt-4 mt-md-5" contenteditable="false">
                 <t t-foreach="products.tab_names" t-as="tab">
                     <t t-if="tab_index==0">
                         <div t-att-id="tab[3]+products.slider_id"

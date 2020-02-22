@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
-* {
-    font-family: 'Montserrat', sans-serif;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    text-rendering: geometricPrecision;
-    font-smooth: always;
-
-
-    @media (max-width: 1024px) {
-        -webkit-overflow-scrolling: touch;
-    }
-
-}
+// * {
+//     font-family: 'Montserrat', sans-serif;
+//
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     text-rendering: optimizeLegibility;
+//     text-rendering: geometricPrecision;
+//     font-smooth: always;
+//
+//
+//     @media (max-width: 1024px) {
+//         -webkit-overflow-scrolling: touch;
+//     }
+//
+// }
 
 .form-control:focus {
     border-color: rgba(0, 0, 0, 0.4);

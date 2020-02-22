@@ -756,19 +756,4 @@
                    eval="[(6,0,[ ref('ks_theme_kinetik.ks_product_7'),ref('ks_theme_kinetik.ks_product_8'),ref('ks_theme_kinetik.ks_product_9'),ref('ks_theme_kinetik.ks_product_10'),ref('ks_theme_kinetik.ks_product_11'),ref('ks_theme_kinetik.ks_product_12')])]"/>
         </record>
     </data>
-
-    <data>
-        <record model="ks_theme_kinetik.ks_breadcumb" id="ks_shop_breadcumb">
-             <field name="name">Shop Breadcumb</field>
-            <field name="breadcumb_image" type="base64"
-                   file="ks_theme_kinetik/static/src/img-ui/view/blog_01.jpg"/>
-            <field name="ks_breadcumb_image_url">/ks_theme_kinetik/static/src/img-ui/view/blog_01.jpg</field>
-        </record>
-    </data>
-    <data>
-        <record model="ks_theme_kinetik.ks_settings" id="ks_shop_setting">
-            <field name="name">Kinetik Settings</field>
-            <field name="default_order_by">ks_rating_avg desc</field>
-        </record>
-    </data>
 </odoo>

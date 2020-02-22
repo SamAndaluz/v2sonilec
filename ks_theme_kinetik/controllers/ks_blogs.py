@@ -28,7 +28,7 @@ class WebsiteBlog(http.Controller):
                 if ks_blog_url != "none":
                     # bad hack to get url
                     ks_blog_url_inner = ks_blog_url.split("(")[1]
-                    ks_blog_url_sanitized = ks_blog_url_inner.split(")")[0]
+                    ks_blog_url_sanitized = ks_blog_url_inner.split(")")[0]+'/330x330'
 
             values = {
                 'ks_blog_url': ks_blog_url_sanitized,

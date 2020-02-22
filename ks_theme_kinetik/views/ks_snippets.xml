@@ -45,7 +45,7 @@
                 <t t-snippet="ks_theme_kinetik.ks_video_static"
                    t-thumbnail="/ks_theme_kinetik/static/src/img-ui/snippets_icons/video.png"/>
                 <t t-snippet="ks_theme_kinetik.ks_deal_of_the_day_base"
-                   t-thumbnail="/ks_theme_kinetik/static/src/img-ui/snippets_icons/deal.png"/>
+                   t-thumbnail="/ks_theme_kinetik/static/src/img-ui/snippets_icons/deal.jpg"/>
             </div>
         </xpath>
     </template>

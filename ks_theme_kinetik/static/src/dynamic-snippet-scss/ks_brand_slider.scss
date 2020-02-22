@@ -131,9 +131,7 @@
             position: relative;
             
             filter: grayscale(1);
-            @media (min-width: 768px) {
-                max-width: 180px;
-            }
+
             @media (max-width: 420px) {
                 max-width: 100px;
             }
@@ -146,10 +144,7 @@
                 width: 100%;
                 padding: 10px;
                 margin: auto;
-                @media (min-width: 768px) {
-                    height: 180px;
-                    max-width: 180px;
-                }
+
                 @media (max-width: 420px) {
                     height: 100px;
                 }

@@ -53,6 +53,8 @@
                                        attrs="{'invisible':[('ks_item_selection_method','!=','Cats')]}"/>
                                 <field name="ks_is_category_tab_layout"
                                        attrs="{'invisible':[('ks_item_selection_method','!=','Cats')]}"/>
+                                <field name="ks_show_sub_categories"
+                                       attrs="{'invisible':[('ks_item_selection_method','!=','Cats')]}"/>
                             </group>
                         </group>
                     </page>

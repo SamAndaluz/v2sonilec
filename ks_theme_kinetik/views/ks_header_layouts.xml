@@ -78,15 +78,6 @@
 
                             </li>
                         </t>
-                        <li class="top__links text-sm-center pl-sm-0 pl-3">
-                            <a href="/about">About Us</a>
-                        </li>
-                        <li class="top__links text-sm-center pl-sm-0 pl-3">
-                            <a href="/contactus">Contact Us</a>
-                        </li>
-
-
-
                     </ul>
                     <ul class="list-unstyled m-auto m-sm-1 ks-header-2-top-social">
                         <a href="#" target="_blank">
@@ -272,12 +263,7 @@
 
                             </li>
                         </t>
-                        <li class="top__links">
-                            <a href="/about">About Us</a>
-                        </li>
-                        <li class="top__links">
-                            <a href="/contactus">Contact Us</a>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="row container-lg m-auto align-items-center no-gutters" >
@@ -431,12 +417,6 @@
 
                                 </li>
                             </t>
-                            <li class="top__links text-sm-center pl-sm-0 pl-3 ">
-                                <a href="/about">About Us</a>
-                            </li>
-                            <li class="top__links text-sm-center pl-sm-0 pl-3">
-                                <a href="/contactus">Contact Us</a>
-                            </li>
                         </ul>
                         <ul class="list-unstyled m-auto m-sm-0 ks-header-2-top-social py-1 py-sm-0">
                             <a href="#" target="_blank">
@@ -622,12 +602,7 @@
 
                                 </li>
                             </t>
-                            <li class="top__links text-sm-center">
-                                <a href="/about">About Us</a>
-                            </li>
-                            <li class="top__links text-sm-center">
-                                <a href="/contactus">Contact Us</a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="col-sm-6">
@@ -733,12 +708,6 @@
                 <div class="row ks-header-2-top justify-content-between align-items-center d-none">
                     <ul id="top-nav"
                         class="list-unstyled row mx-0  m-auto mx-2 ks_top_menu justify-content-center">
-                        <li class="top__links text-sm-center pl-sm-0 pl-3 mb-lg-0 mb-2">
-                            <a href="/about">About Us</a>
-                        </li>
-                        <li class="top__links text-sm-center pl-sm-0 pl-3 mb-lg-0 mb-2">
-                            <a href="/contactus">Contact Us</a>
-                        </li>
                         <t t-if="(request.is_frontend_multilang and len(languages) &gt; 1) or editable">
                             <li class="lang_dropdown top__links text-sm-center mb-lg-0 mb-2 mr-2">
                                 <div class="js_language_selector" id="lang"
@@ -1098,12 +1067,6 @@
 
                                 </li>
                             </t>
-                            <li class="top__links">
-                                <a href="/about">About Us</a>
-                            </li>
-                            <li class="top__links">
-                                <a href="/contactus">Contact Us</a>
-                            </li>
                         </ul>
                         <ul class="list-unstyled m-auto m-sm-1 ks-header-2-top-social">
                             <a href="#" target="_blank">
@@ -1294,12 +1257,6 @@
 
                                 </li>
                             </t>
-                            <li class="top__links text-sm-center ">
-                                <a href="/about">About Us</a>
-                            </li>
-                            <li class="top__links text-sm-center">
-                                <a href="/contactus">Contact Us</a>
-                            </li>
                         </ul>
                         <ul class="list-unstyled m-auto m-sm-0 ks-header-2-top-social py-1 py-sm-0 order-2 pr-3">
                             <a href="#" target="_blank">
@@ -1485,12 +1442,6 @@
 
                             </li>
                         </t>
-                        <li class="top__links text-sm-center">
-                            <a href="/about">About Us</a>
-                        </li>
-                        <li class="top__links text-sm-center">
-                            <a href="/contactus">Contact Us</a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-5 py-2">
@@ -1787,7 +1738,7 @@
         <xpath expr="//header//div[@id='top_menu_collapse']//li[@id='my_wish']" position="replace"/>
     </template>
 
-    <template id="website.affix_top_menu" inherit_id="website.layout" customize_show="False" name="Affix Top Menu">
+    <template id="website.affix_top_menu" inherit_id="website.layout" customize_show="True" name="Affix Top Menu">
         <xpath expr="//header" position="attributes">
             <attribute name="t-attf-class" add="#{'o_affix_enabled'}" separator=" "/>
         </xpath>

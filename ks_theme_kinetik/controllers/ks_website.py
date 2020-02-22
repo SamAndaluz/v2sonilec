@@ -4,6 +4,7 @@ from odoo import http, models, fields, _
 from odoo.http import request
 from odoo.addons.portal.controllers.web import Home
 from odoo.addons.website.controllers.main import QueryURL
+from odoo.addons.portal.controllers.mail import PortalChatter
 import re
 
 class Website(Home):
@@ -69,7 +70,7 @@ class Website(Home):
             'compute_currency': request.website.get_current_pricelist().currency_id,
             'attrib_set': (),
             'keep': keep,
-            'image_url': "/web/image/product.template/"+str(product.id)+"/image",
+            'image_url': "/web/image/product.template/"+str(product.id)+"/image/330x330",
             'categories': product.categ_id,
             'main_object': product,
             'product': product,
@@ -82,5 +83,15 @@ class Website(Home):
 
 
 
+
+class WebsiteRating(PortalChatter):
+
+    @http.route()
+    def portal_chatter_init(self, res_model, res_id, domain=False, limit=False, **kwargs):
+        result = super(WebsiteRating, self).portal_chatter_init(res_model, res_id, domain=domain, limit=limit, **kwargs)
+        # get the rating statistics about the record
+        record = request.env[res_model].browse(res_id)
+        record.sudo().ks_rating_avg = record.sudo().rating_avg
+        return result
 
 

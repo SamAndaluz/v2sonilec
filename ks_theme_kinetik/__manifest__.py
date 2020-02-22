@@ -103,13 +103,13 @@
     'website': "https://www.ksolves.com",
     'license': 'OPL-1',
     'currency': 'EUR',
-    'price': '180.0',
+    'price': '199.0',
     'category': 'Theme/Ecommerce',
     'support': 'sales@ksolves.com',
-    'version': '1.5.0',
+    'version': '1.6.8',
     'live_test_url': 'https://demokinetik.kappso.com',
     'depends': ['ks_theme_base', 'website_sale_wishlist', 'website_sale_comparison',
-                'website_sale_stock', 'website_rating'], # eliminated the 'website_crm'
+                'website_sale_stock', 'website_rating','website_crm'],
     # always loaded
     'data': [
         'security/ir.model.access.csv',
@@ -123,11 +123,7 @@
         'views/ks_snippets.xml',
         # Cart
         'views/ks_cart.xml',
-        # Footer layout
-        'views/ks_footer_layout.xml',
-        'views/ks_footer_view.xml',
-        'data/ks_footer_data.xml',
-        'data/ks_demo_data.xml',
+
         # fonts
         'views/ks_fonts.xml',
         # buttons
@@ -139,6 +135,7 @@
         'views/ks_brand_snippet.xml',
         'views/ks_featured_snippet.xml',
         'views/ks_Blogs.xml',
+        'views/ks_blog_page.xml',
         'views/ks_all_static_snippets.xml',
         'views/ks_new_snippets.xml',
         'views/ks_product_detail.xml',
@@ -158,12 +155,17 @@
         'views/ks_update_all_slider_view.xml',
         'views/ks_breadcumb_image.xml',
         'views/ks_deal_of_the_day_new.xml',
+        'views/ks_blog_detail.xml',
 
         # landing pages
         'views/ks_theme_beauty.xml',
         'views/ks_inherited_blogs.xml',
         'views/ks_website_contact_us_form.xml',
-
+        # Footer layout
+        'views/ks_footer_layout.xml',
+        'views/ks_footer_view.xml',
+        'data/ks_footer_data.xml',
+        'data/ks_demo_data.xml',
     ],
 
     'qweb': [

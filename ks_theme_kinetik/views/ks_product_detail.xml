@@ -27,15 +27,6 @@
         </xpath>
     </template>
 
-<!--    &lt;!&ndash;This is used to replace and make design of product detail page as our need&ndash;&gt;-->
-<!--    <template id="kps_product" name="Kinetik Manager" inherit_id="website_sale.product">-->
-<!--        <xpath expr="//div[1]" position="replace">-->
-<!--            <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class=" ks_temp js_sale">-->
-<!--                <section-->
-<!--                        t-attf-class="container oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}"-->
-<!--                        id="product_detail">-->
-<!--                    <div class="row px-xl-5 px-2 pt-5 position-relative">-->
-<!--                        <div class="col-lg-6">-->
     <template id="ks_Breadcrumb_product" name="Kinetik Product Page Breadcrumb"
               inherit_id="website_sale.product" priority="100">
         <xpath expr="//div[@id='wrap']/section[1]" position="before">
@@ -193,10 +184,6 @@
                                                 t-att-data-attribute_exclusions="{'exclusions: []'}"/>
                                         </t>
                                     </t>
-
-<!--                                    <p t-if="True" class="css_not_available_msg alert alert-warning">This combination-->
-<!--                                        does not exist.-->
-<!--                                    </p>-->
                                     <div class="ks_action_buttons d-flex align-items-center">
                                         <a role="button" id="add_to_cart" class="btn btn-primary btn-lg js_check_product a-submit theme-btn cart__btn justify-content-center ks_modal_optional"
                                            href="#"
@@ -220,7 +207,7 @@
                                 <t t-if="ks_brand_icon">
                                     <div class="col-4">
                                         <div class="ks_brand_thum_image">
-                                            <img t-att-src="'/web/image/ks_product_manager.ks_brand/%s/ks_brand_logo' %(ks_brand_icon)"/>
+                                            <img t-att-src="'/web/image/ks_product_manager.ks_brand/%s/ks_brand_logo/150x150' %(ks_brand_icon)"/>
                                         </div>
                                     </div>
                                 </t>
@@ -285,7 +272,7 @@
                                     <table class="table details-table table-bordered">
                                            <t t-if="product.ks_product_brand_id.name">
                                                  <tr>
-                                                    <th>Brand:</th>
+                                                    <th>Brand</th>
                                                      <td>
                                                          <t t-esc="product.ks_product_brand_id.name"/>
                                                      </td>
@@ -293,17 +280,29 @@
                                             </t>
                                            <t t-if="product.public_categ_ids">
                                                  <tr>
-                                                    <th>Category:</th>
+                                                    <th>Category</th>
                                                      <td>
+                                                         <t t-set="i" t-value="0"/>
+                                                         <t t-set="k" t-value="0"/>
+                                                         <t t-foreach="product.public_categ_ids" t-as="categ">
+                                                             <t t-set="i" t-value="i+1"/>
+                                                         </t>
                                                         <t t-foreach="product.public_categ_ids" t-as="categ">
-                                                            <t t-esc="categ.name"/>
+                                                            <t t-set="k" t-value="k+1"/>
+                                                            <t t-if=" k != i">
+                                                                <t t-esc="categ.name"/>
+                                                                <span>,</span>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <t t-esc="categ.name"/>
+                                                            </t>
                                                         </t>
                                                      </td>
                                                 </tr>
                                            </t>
                                             <t t-if="product.weight">
                                                  <tr>
-                                                    <th>Weight:</th>
+                                                    <th>Weight</th>
                                                      <td>
                                                         <t t-esc="product.weight"/>
                                                         <t t-esc="product.weight_uom_name"/>
@@ -312,21 +311,29 @@
                                             </t>
                                             <t t-if="product.volume">
                                                 <tr>
-                                                    <th>Volume:</th>
+                                                    <th>Volume</th>
                                                     <td>
                                                         <t t-esc="product.volume"/>
                                                         m³
                                                     </td>
                                                  </tr>
                                             </t>
-                                            <t t-if="product.type">
-                                                <tr>
-                                                    <th>Type:</th>
-                                                    <td>
-                                                        <t t-esc="product.type"/>
-                                                    </td>
-                                                </tr>
-                                            </t>
+                                        <t t-if="product.type">
+                                            <tr>
+                                                <th>Type</th>
+                                                <td>
+                                                    <t t-if="product.type == 'consu'">
+                                                        <span>Consumable</span>
+                                                    </t>
+                                                    <t t-if="product.type == 'product'">
+                                                        <span>Storable Product</span>
+                                                    </t>
+                                                    <t t-if="product.type == 'service'">
+                                                        <span>Service</span>
+                                                    </t>
+                                                </td>
+                                            </tr>
+                                        </t>
                                     </table>
                                 </div>
                                 <div id="reviews" role="tabpanel" aria-labelledby="reviews-tab" class="tab-pane fade">
@@ -371,7 +378,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">
-                                <t t-esc="product.size_chart_name"/>
+                                <span>Product Size Chart</span>
                             </h4>
                             <button type="button" class="close" data-dismiss="modal">
                                 <span class="fa fa-close"/>
@@ -452,7 +459,7 @@
                             </t>
                         </div>
                     </div>
-                 <div class="ks_alternate_slider container mt32 col-md-6 col-12 pl-xl-5" t-if="product.accessory_product_ids and product.ks_is_accessories_slider">
+                 <div class="ks_alternate_slider ks_accessories_slider container mt32 col-md-6 col-12 pl-xl-5" t-if="product.accessory_product_ids and product.ks_is_accessories_slider">
                         <h3 class="theme__heading">Accessories</h3>
                         <div class="row mt16 owl-carousel owl-theme accessories-prod-owl" style="">
                             <t t-foreach="product.accessory_product_ids" t-as="alt_product">
@@ -489,18 +496,6 @@
              </div>
         </xpath>
     </template>
-
-<!--     <template id="ks_product_offer_detail_page" inherit_id="website_sale.product_price" name="orignal price">-->
-<!--        <xpath expr='//h4[hasclass("css_non_editable_mode_hidden")]' position='replace'>-->
-<!--            <h4 class="css_editable_mode_hidden decimal_precision" t-att-data-precision="str(website.currency_id.decimal_places)">-->
-<!--                <span class="ks_product_price_cross d-none" t-field="product.list_price"-->
-<!--                    t-options='{-->
-<!--                       "widget": "monetary",-->
-<!--                       "display_currency": product.currency_id,-->
-<!--                   }'/>-->
-<!--          </h4>-->
-<!--        </xpath>-->
-<!--    </template>-->
 
     <template id="ks_multiimage_layout" inherit_id='ks_theme_kinetik.kps_product' active="False"
               customize_show="True" name="Kinetik Multi Image Vertically">
@@ -541,19 +536,6 @@
                         </div>
                     </div>
                     <div class="carousel-inner">
-<!--                        <t t-if="request.website.viewref('ks_theme_kinetik.percent_discount').active">-->
-<!--                            <t t-if="combination_info['list_price'] == 0" t-set="percentage_discount" t-value="0"/>-->
-<!--                            <t t-else="" t-set="percentage_discount" t-value="((combination_info['list_price']-combination_info['price'])/combination_info['list_price'])*100"/>-->
-<!--                            <t t-if="percentage_discount>0">-->
-<!--                                <div class="ks_snippet_percentage_discount_2">-->
-<!--                                    <div class="d-flex">-->
-<!--                                        <t t-esc="int(percentage_discount)"/>-->
-<!--                                        <span>%</span>-->
-<!--                                    </div>-->
-<!--                                    <span class="ks_percentage_info">off</span>-->
-<!--                                </div>-->
-<!--                            </t>-->
-<!--                        </t>-->
                         <div t-if="variant_img" class="carousel-item active" itemprop="image"
                              t-field="product_variant.image"
                              t-options="{'widget': 'image', 'class': 'product_detail_img js_variant_img', 'alt-field': 'name', 'zoom': 'image', 'unique': str(product['__last_update']) + (str(product_variant['__last_update']) or '')}"/>
@@ -629,7 +611,7 @@
                                t-att-value="add_qty or 1"/>
                         <div class="input-group-append">
                             <a t-attf-href="#" class="btn btn-secondary float_left js_add_cart_json" aria-label="Add one"
-                               title="Add one">
+                               title="Add One">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
@@ -729,19 +711,11 @@
                   t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
               />
               <t t-if="request.website.viewref('ks_theme_kinetik.percent_discount').active">
-                  <t t-if="combination_info['list_price'] == 0" t-set="percentage_discount"
-                     t-value="0"/>
-                  <t t-else="" t-set="percentage_discount"
-                     t-value="((combination_info['list_price']-combination_info['price'])/combination_info['list_price'])*100"/>
-                  <t t-if="percentage_discount>0">
-                      <div class="ks_snippet_percentage_discount_2">
-                          <div class="Percentage-offer">
-                              <span>(</span>
-                              <t t-esc="int(percentage_discount)"/>%
-                              <span class="ks_percentage_info">off)</span>
-                          </div>
+                  <div class="ks_snippet_percentage_discount_2">
+                      <div class="Percentage-offer">
+
                       </div>
-                  </t>
+                  </div>
               </t>
           </h4>
           <h4 class="css_non_editable_mode_hidden decimal_precision" t-att-data-precision="str(website.currency_id.decimal_places)">

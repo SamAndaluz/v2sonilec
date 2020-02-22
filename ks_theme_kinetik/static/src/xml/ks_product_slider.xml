@@ -6,7 +6,7 @@
                     <h4 class="theme__heading mb-4" >
                         <t t-esc="products.grid_name" />
                     </h4>
-                    <div t-att-id="products.slider_id" class="owl-carousel products-carousel owl-theme">
+                    <div t-att-id="products.slider_id" class="owl-carousel products-carousel owl-theme" contenteditable="false">
                         <t t-foreach="products.prods" t-as="prods">
                             <div class="product-card ks-slider-products">
                                 <div class="fp__img position-relative text-center">
@@ -153,7 +153,7 @@
                         <h4 class="theme__heading mb-4" >
                             <t t-esc="products.grid_name" />
                         </h4>
-                        <div id="trendy_styles_row" class="row no-gutters mx-2">
+                        <div id="trendy_styles_row" class="row no-gutters mx-2" contenteditable="false">
                             <div t-att-id="products.slider_id" class="owl-carousel products-carousel owl-theme">
                                 <t t-foreach="products.trendy" t-as="prods">
                                     <div class="mt-3 p-2">
@@ -182,11 +182,12 @@
                     </section>
                 </t>
                 <t t-if="products.blogs.length">
+                   <t t-if="products.blog_template_type=='t1'">
                     <h4 class="theme__heading mb-4" >
                         <t t-esc="products.grid_name" />
                     </h4>
                     <div t-att-id="products.slider_id"
-                         class="owl-carousel owl-theme mt-md-4 row no-gutters blogs__row ks-blog-view-2 products-carousel">
+                         class="owl-carousel owl-theme mt-md-4 row no-gutters blogs__row ks-blog-view-2 products-carousel" contenteditable="false">
                         <t t-foreach="products.blogs" t-as="blog">
                             <div class="p-2 ks-block-height">
                                 <div class="blog__card box__shadow py-sm-4 pl-sm-4 py-3 pl-3 mb-3">
@@ -218,7 +219,50 @@
                         </t>
                     </div>
                 </t>
-
+                    <t t-else="" >
+                         <div class="ks-list-block-container">
+                             <h4 class="theme__heading mb-4" >
+                                <t t-esc="products.grid_name"/>
+                             </h4>
+                            <div class="ks-list-block">
+                                <div t-att-id="products.slider_id"
+                                     class="owl-carousel owl-theme mt-md-4 row no-gutters blogs__row ks-blog-view-2 products-carousel" contenteditable="false">
+                                    <t t-foreach="products.blogs" t-as="blog">
+                                        <div class="ks-list-block-item">
+                                             <div class="row no-gutters ks-block-top">
+                                                <div class="col-lg-10 col-md-10 col-sm-10 d-flex align-items-center">
+                                                     <div class="ks-blogs-user-image">
+                                                          <img t-att-src="blog.author_image" alt="user image" class="image-fluid"/>
+                                                     </div>
+                                                     <h5 class="ks-ks-user-name mb-0 pl-2 ks_author_name"><t t-esc="blog.author_name"/></h5>
+                                                </div>
+                                                  <div class="col-2 d-flex align-items-center justify-content-end">
+                                                    <div class="current-month"><t t-esc="blog.ks_create_date"/></div>
+                                                </div>
+                                             </div>
+                                             <div class="ks-blogs-middle">
+                                                  <a t-att-href="blog.ks_link_redirect">
+                                                  <img t-att-src="blog.ks_blog_url" alt="user image" class="w-100 h-100 image-fluid"/>
+                                                  </a>
+                                            </div>
+                                             <div class="ks-blogs-bottom">
+                                                <h5 class="ks-ks-user-name">
+                                                     <t t-esc="blog.ks_name"/>
+                                                </h5>
+                                                <div class="ks-blog-info">
+                                                   <t t-esc="blog.ks_blog_content"/>
+                                                </div>
+                                                <div class="ks-blog-button mt-1 text-right">
+                                                    <a t-att-href="blog.ks_link_redirect" class="btn theme-blog-btn ks-blog-read"><i class="fa fa-arrow-right"  ></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                         </div>
+                        </t>
+                </t>
                 <t t-if="products.brands.length">
                     <t t-if="products.template_type=='t1'">
                         <div class="ks-our-partners-v2 pb-5">
@@ -228,7 +272,7 @@
                                 </h4>
                                 <div class="ks-partners-box">
                                     <div t-att-id="products.slider_id"
-                                         class="row no-gutters owl-carousel brand-c-v2 brands__row ks_brands_home_page justify-content-center products-carousel">
+                                         class="row no-gutters owl-carousel brand-c-v2 brands__row ks_brands_home_page justify-content-center products-carousel" contenteditable="false">
                                         <t t-foreach="products.brands" t-as="brand">
                                             <div t-att-class="'ks-partners-items-circle '+products.ks_animation ">
                                                 <div class="ks-partners-top">
@@ -251,7 +295,7 @@
                                 <h4 class="mb-3 theme__heading">
                                     <t t-esc="products.grid_name"/>
                                 </h4>
-                                <div class="ks-partners-box">
+                                <div class="ks-partners-box" contenteditable="false">
                                     <div t-att-id="products.slider_id"
                                          class="row no-gutters owl-carousel brand-v11 brands__row ks_brands_home_page justify-content-center products-carousel">
                                         <t t-foreach="products.brands" t-as="brand">

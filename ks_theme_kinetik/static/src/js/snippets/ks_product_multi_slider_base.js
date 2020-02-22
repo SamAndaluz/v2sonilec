@@ -10,6 +10,7 @@ odoo.define('ks_ecommerce_theme.product_multi_slider_base', function(require) {
     var website = require('website.utils');
     var _t = core._t;
     var qweb = core.qweb;
+    var ks_slider_items;
 
     var WebsiteSaleProductSlider = Widget.extend({
         events: {},
@@ -39,6 +40,12 @@ odoo.define('ks_ecommerce_theme.product_multi_slider_base', function(require) {
                    $inner_temp.appendTo($target.empty());
                    var slider_id = "#"+data.slider_id;
                    var sliders = $(slider_id)
+                   if (data['blogs'].length) {
+                    ks_slider_items = 1
+                   }
+                   else{
+                    ks_slider_items = 2
+                   }
                    _.each(sliders,function(slider){
                           $(slider).owlCarousel({
                               items:data.items,
@@ -53,16 +60,16 @@ odoo.define('ks_ecommerce_theme.product_multi_slider_base', function(require) {
                               responsiveClass: true,
                               responsive:{
                                     0:{
-                                        items: 2,
+                                        items: ks_slider_items,
                                         dots: true,
                                         margin:0,
                                     },
                                     540:{
-                                        items: 2,
+                                        items:ks_slider_items,
                                         dots: true,
                                     },
                                     960:{
-                                        items: 3,
+                                        items: ks_slider_items + 1,
                                         dots: true
                                     },
                                     1200:{

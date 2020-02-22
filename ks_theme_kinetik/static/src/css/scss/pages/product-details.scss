@@ -440,6 +440,7 @@
     img {
         height: 250px;
         box-shadow: none !important;
+        object-fit: contain;
 
         @media (max-width: 575px) {
             height: 150px;
@@ -448,8 +449,11 @@
 }
 
 .ks-alternate-product-row {
-    padding-bottom: 40px;
     margin-top: -32px;
+
+    @media (max-width: 1400px) and (min-width: 1200px) {
+         padding: 0 50px !important;
+    }
 
     .theme__heading {
        margin-bottom: 24px;
@@ -461,9 +465,21 @@
        }
     }
 
-    .container {
-        max-width: 600px;
-        margin: inherit;
+    @media (min-width: 1400px) {
+        .container {
+            max-width: 600px;
+            margin: inherit;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .pr-xl-5 {
+            padding-right: 70px !important;
+        }
+
+        .pl-xl-5 {
+            padding-left: 70px !important;
+        }
     }
 }
 
@@ -688,7 +704,10 @@
         align-items: center;
         justify-content: center;
         transition: 0.3s ease-in-out;
-
+        @media(max-width: 767px){
+            width: 25px;
+            height: 40px;
+        }
         &:after {
             content: '';
             width: 50px;
@@ -764,7 +783,6 @@
 
 #product_details .o_website_rating_static {
     text-align: left;
-    font-family: sans-serif;
     margin-bottom: 10px;
     padding: 0;
     color: #f66823;
@@ -930,6 +948,12 @@
                     background: #d64836 !important;
                 }
             }
+            .fa-pinterest-p{
+                color: #bb2e27;
+                &:hover{
+                    background: #bb2e27 !important;
+                }
+            }
         }
     }
 }
@@ -943,7 +967,7 @@
         margin-bottom: 15px;
         box-shadow: 1px 4px 8px #a2a1a1;
         padding-left: 10px;
-        max-width: 300px;
+        max-width: 310px;
     }
 
     .ks_product_timer_title {
@@ -956,7 +980,7 @@
     }
 
     @media(min-width: 1280px){
-        margin-top: -45px;
+//         margin-top: -45px;
         .flip-clock-wrapper{
             margin-bottom: 0px !important;
         }
@@ -1061,5 +1085,30 @@
             width: calc(100vw - 10px);
             z-index: -1;
         }
+    }
+}
+
+.ks_quantity_panel {
+    align-items: center;
+}
+
+.size_chart_preview_modal {
+    .modal-header {
+        color: #141f1e !important;
+    }
+
+    .modal-body {
+        padding: 16px;
+        @extend .scroll-style;
+    }
+
+    .close {
+        opacity: 1;
+    }
+}
+
+.ks_action_buttons {
+    .a-submit.theme-btn {
+        margin: 10px 0;
     }
 }

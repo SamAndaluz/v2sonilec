@@ -3,8 +3,8 @@
 
     <template id="ks_assets_frontend" inherit_id="web.assets_frontend">
         <xpath expr="." position="inside">
-            <script type="text/javascript" src="/ks_theme_kinetik/static/src/lib/jquery lazy loading/ks_jquery.lazy.js" />
-            <script type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_frontend.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/lib/jquery lazy loading/ks_jquery.lazy.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_frontend.js" />
         </xpath>
     </template>
     <template id="ks_sale_tags" name="Product Tag" inherit_id="web.assets_frontend" customize_show="True" active="False" >
@@ -35,15 +35,13 @@
             <link rel="stylesheet"
                   type="text/css"
                   href="/ks_theme_kinetik/static/src/scss/buttons/snippet_width.scss"/>
-<!--                  need to add scss file for snippet width layout@ sukhjinder sir-->
-
         </xpath>
     </template>
 
     <template id="load_more_product" name="Load Infinite Products" customize_show="True"
               inherit_id="web.assets_frontend" active="True">
         <xpath expr="." position="inside">
-            <script type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_load_more_products.js"/>
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_load_more_products.js"/>
             <link rel="stylesheet"
                   type="text/css"
                   href="/ks_theme_kinetik/static/src/scss/shop/load_more.scss"/>
@@ -180,6 +178,11 @@
                   type="text/scss"
                   href="/ks_theme_kinetik/static/src/scss/shop/shop_page.scss"
             />
+             <link rel="stylesheet"
+                  type="text/scss"
+                  href="/ks_theme_kinetik/static/src/scss/shop/blog-detail.scss"
+            />
+
             <link rel="stylesheet"
                   type="text/scss"
                   href="/ks_theme_kinetik/static/src/dynamic-snippet-scss/ks_trendy_style.scss"
@@ -223,17 +226,6 @@
             <link href="/ks_theme_kinetik/static/src/lib/easy-autocomplete/easy-autocomplete.css"
                   rel="stylesheet"/>
             <link rel="stylesheet" href="/ks_theme_kinetik/static/src/css/bootstrap-slider.min.css"/>
-
-
-            <!--            landding page scss-->
-<!--            <link rel="stylesheet"-->
-<!--                  type="text/scss"-->
-<!--                  href="/ks_theme_kinetik/static/src/landing-pages-scss/ks_corporate.scss"-->
-<!--            />-->
-<!--            <link rel="stylesheet"-->
-<!--                  type="text/scss"-->
-<!--                  href="/ks_theme_kinetik/static/src/landing-pages-scss/ks_beauty.scss"-->
-<!--            />-->
             <link rel="stylesheet"
                   type="text/scss"
                   href="/ks_theme_kinetik/static/src/landing-pages-scss/landing-pages.scss"
@@ -242,10 +234,6 @@
                   type="text/scss"
                   href="/ks_theme_kinetik/static/src/lib/animate/animate.css"
             />
-<!--            <link rel="stylesheet"-->
-<!--                  type="text/scss"-->
-<!--                  href="/ks_theme_kinetik/static/src/landing-pages-scss/ks_hospital.scss"-->
-<!--            />-->
 
             <!--This is furniture scss file-->
             <link rel="stylesheet"
@@ -265,6 +253,10 @@
             <link rel="stylesheet"
                   type="text/scss"
                   href="/ks_theme_kinetik/static/src/dynamic-snippet-scss/ks_blog.scss"
+            />
+             <link rel="stylesheet"
+                  type="text/scss"
+                  href="/ks_theme_kinetik/static/src/dynamic-snippet-scss/ks_list_blog.scss"
             />
             <!--libs css-->
             <link rel="stylesheet" type="text/css"
@@ -308,50 +300,50 @@
             />
 
             <!--libs js-->
-            <script src="/ks_theme_kinetik/static/src/lib/bootstrap-slider.min.js" />
-            <script src="/ks_theme_kinetik/static/src/lib/easy-autocomplete/easy-autocomplete.js" />
-            <script src="/ks_theme_kinetik/static/src/lib/owl_slider/owl.carousel.min.js" />
-            <script src="/ks_theme_kinetik/static/src/lib/spectrum/spectrum.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/lib/bootstrap-slider.min.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/lib/easy-autocomplete/easy-autocomplete.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/lib/owl_slider/owl.carousel.min.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/lib/spectrum/spectrum.js" />
 
             <!--theme js-->
-            <script src="/ks_theme_kinetik/static/src/js/ks_theme_customization.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_cart_hover.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_theme_customization.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_cart_hover.js" />
 
-            <script src="/ks_theme_kinetik/static/src/js/ks_Shop_filters.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_product_configurator_mixin.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_shop_quick_preview.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_Shop_filters.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_product_configurator_mixin.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_shop_quick_preview.js" />
 
-            <script src="/ks_theme_kinetik/static/src/js/ks_custom_snippets.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_search_autocomplete.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_website_mega_menu.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_customize.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_website_sale.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_customize_reload.js"/>
-            <script src="/ks_theme_kinetik/static/src/js/ks_cart_popup.js"/>
-            <script src="/ks_theme_kinetik/static/src/js/ks_menu_height.js"/>
-            <script src="/ks_theme_kinetik/static/src/js/ks_video_snippet.js"/>
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_custom_snippets.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_search_autocomplete.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_website_mega_menu.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_customize.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_website_sale.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_customize_reload.js"/>
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_cart_popup.js"/>
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_menu_height.js"/>
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_video_snippet.js"/>
 
             <!--snippets sections-->
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_brand_snippet.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_featured_snippet.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_new_snippet.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_blogs.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_product_grid.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_main_slider.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_product_multi_slider_base.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_multitab_slider_base.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_multitab_slider.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_product_slider_multi.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_trendy_style.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_recently_viewed.js" />
-            <script src="/ks_theme_kinetik/static/src/lib/wow.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_front_end.js" />
-            <script src="/ks_theme_kinetik/static/src/js/ks_wish_list.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_product_grid_multi.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_video_snippet_multi.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_deal_of_the_day_multi.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/ks_deal_of_the_day.js" />
-            <script src="/ks_theme_kinetik/static/src/js/snippets/flipclock.js"></script>
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_brand_snippet.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_featured_snippet.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_new_snippet.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_blogs.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_product_grid.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_main_slider.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_product_multi_slider_base.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_multitab_slider_base.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_multitab_slider.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_product_slider_multi.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_trendy_style.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_recently_viewed.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/lib/wow.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_front_end.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/ks_wish_list.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_product_grid_multi.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_video_snippet_multi.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_deal_of_the_day_multi.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/ks_deal_of_the_day.js" />
+            <script defer="defer" type="text/javascript" src="/ks_theme_kinetik/static/src/js/snippets/flipclock.js"></script>
 
 
 

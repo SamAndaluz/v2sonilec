@@ -72,7 +72,7 @@ $(document).ready(function(){
             $('body').addClass('js-no-scroll');
         });
 
-        //close filter
+        //close filter  '.filter-heading-panel'
          $('.ks-filter-overlay').on('click', function(e) {
              $('#products_grid_before').addClass('ks-hide-filter');
             $('.ks-filter-overlay').delay(500).queue(function() {
@@ -166,7 +166,8 @@ $(document).ready(function(){
         }
         var filter_len = $('.ks-filter-outer').length;
         if(!filter_len){
-            $('.ks_product_categories_before').removeClass("ks-only-categories").addClass("ks-only-categories");
+            $('#products_grid_before').addClass("ks-only-categories");
+            $('.dropdown_ppg').addClass('d-none')
         }
        var is_custom_sign_up = $(".ks-custom-login").length;
        if(is_custom_sign_up){
@@ -376,5 +377,5 @@ jQuery.each({
 
                 return this.pushStack( ret );
         };
-});
+    });
 });

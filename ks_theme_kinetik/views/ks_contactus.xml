@@ -15,7 +15,7 @@
                               </div>
                           </section>
                       </div>
-                      <div class="oe_structure oe_empty o_editable">
+<!--                      <div class="oe_structure oe_empty o_editable">-->
                           <div class="container py-sm-5 my-3">
                               <div class="row ks-contact-form-container">
                                   <div name="mail_button">
@@ -28,7 +28,7 @@
                                   </div>
                                   <div class="col-lg-4 col-md-12 col-12 pl-md-5 ks-contact-social p-sm-5 p-4">
                                       <div class="row">
-                                          <div class="ks-contact-info-box d-flex no-animation">
+                                          <div class="ks-contact-info-box d-flex">
                                               <div class="ks-contact-icon">
                                                   <img src="/ks_theme_kinetik/static/src/images/contact-us-page/placeholder.svg"
                                                        class="ks-contact-icon-img"/>
@@ -45,7 +45,7 @@
                                                   </div>
                                               </div>
                                           </div>
-                                          <div class="ks-contact-info-box d-flex no-animation">
+                                          <div class="ks-contact-info-box d-flex">
                                               <div class="ks-contact-icon">
                                                   <img src="/ks_theme_kinetik/static/src/images/contact-us-page/smartphone-ringing.svg"
                                                        class="ks-contact-icon-img"/>
@@ -57,7 +57,7 @@
                                                   </div>
                                               </div>
                                           </div>
-                                          <div class="ks-contact-info-box d-flex no-animation">
+                                          <div class="ks-contact-info-box d-flex">
                                               <div class="ks-contact-icon">
                                                   <img src="/ks_theme_kinetik/static/src/images/contact-us-page/mail-send.svg"
                                                        class="ks-contact-icon-img"/>
@@ -74,34 +74,34 @@
                                       <section class="flex ks-form-social-list justify-content-center">
                                           <section class="mb-3">
                                               <a href="#" target="_blank">
-                                                  <i class="fa fa-facebook rounded-circle mr-2 no-animation"/>
+                                                  <i class="fa fa-facebook rounded-circle mr-2"/>
                                               </a>
                                           </section>
                                           <section class="mb-3">
                                               <a href="#" target="_blank">
-                                                  <i class="fa fa-twitter rounded-circle mr-2 no-animation"/>
+                                                  <i class="fa fa-twitter rounded-circle mr-2"/>
                                               </a>
                                           </section>
                                           <section class="mb-3">
                                               <a href="#" target="_blank">
-                                                  <i class="fa fa-linkedin rounded-circle mr-2 no-animation"/>
+                                                  <i class="fa fa-linkedin rounded-circle mr-2"/>
                                               </a>
                                           </section>
                                           <section class="mb-3">
                                               <a href="#" target="_blank">
-                                                  <i class="fa fa-youtube rounded-circle mr-2 no-animation"/>
+                                                  <i class="fa fa-youtube rounded-circle mr-2"/>
                                               </a>
                                           </section>
                                           <section class="mb-3">
                                               <a href="#" target="_blank">
-                                                  <i class="fa fa-instagram rounded-circle mr-2 no-animation"/>
+                                                  <i class="fa fa-instagram rounded-circle mr-2"/>
                                               </a>
                                           </section>
                                       </section>
                                   </div>
                               </div>
                           </div>
-                      </div>
+<!--                      </div>-->
                   </div>
               </section>
           </xpath>

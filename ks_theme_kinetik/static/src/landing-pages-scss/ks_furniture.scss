@@ -521,9 +521,16 @@
         margin-bottom: 10px;
         font-weight: 600;
     }
-    .flip-clock-divider .flip-clock-label{
-        font-size: 1rem;
-        font-weight: 600;
+    .flip-clock-divider {
+        .flip-clock-label{
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 575px) {
+            width: 11px;
+            left: -2px;
+        }
     }
     .flip-clock-wrapper ul li a div div.inn{
         background: $primary;
@@ -605,5 +612,17 @@
 .our-team .team-title{
     h5{
         color: $black;
+    }
+}
+
+.ks_timer_box {
+    @media (min-width: 769px) {
+        margin-left: auto;
+    }
+    .flip-clock-divider {
+        @media (max-width: 575px) {
+            width: 11px;
+            left: -2px;
+        }
     }
 }

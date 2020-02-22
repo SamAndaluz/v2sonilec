@@ -101,6 +101,27 @@
 .wishlist-section{
     margin-top: 40px;
     margin-bottom: 40px;
+
+    > h3 {
+        color: #000;
+    }
+    .table {
+        tr {
+            td:nth-child(3) {
+                color: #000;
+            }
+
+            .text-left {
+                p.text-muted {
+                    display: none;
+                }
+
+                .btn-link {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
 }
 
 #oe_structure_website_blog_latest_blogs_1 {
@@ -345,7 +366,7 @@
         min-width: 120px;
 
         @media (max-width: 575px) {
-            min-width: auto;
+            //min-width: auto;
         }
     }
 
@@ -365,10 +386,6 @@
             color: #4e4d4d;
             font-size: 14px;
         }
-    }
-
-    td.td-img img {
-        margin-top: 20px;
     }
 
     .fa-minus,
@@ -456,7 +473,7 @@
         padding-right: 0;
 
          .ks-popover-table-container {
-            max-height: calc(100vh - 350px);
+            max-height: calc(100vh - 410px);
             margin-bottom: 20px;
             overflow: auto;
             padding-right: 10px;
@@ -480,6 +497,12 @@
     .td-name {
         @media (max-width: 575px) {
             text-align: left !important;
+        }
+    }
+
+    .card-body {
+        .btn-secondary.float-right.d-none {
+            display: none !important;
         }
     }
 }
@@ -813,4 +836,41 @@ table.mb16.table.table-striped.table-sm.js_cart_lines {
     font-weight: 400 !important;
     display: block;
     margin-bottom: 2px;
+}
+
+#delivery_carrier .float-right {
+    float: none !important;
+    white-space: normal;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    overflow: inherit;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.ks_payment_page{
+    .table{
+        .css_quantity{
+            a.btn.btn-link.js_add_cart_json.d-none.d-md-inline-block {
+                display: block !important;
+            }
+        }
+    }
+}
+#cart_products{
+    a.btn.btn-link.js_add_cart_json.d-none.d-md-inline-block.hover-cart {
+        display: block !important;
+    }
+}
+
+#suggested_products {
+    .td-product_name {
+        .text-muted.d-none.d-md-block {
+            display: none !important;
+        }
+    }
 }

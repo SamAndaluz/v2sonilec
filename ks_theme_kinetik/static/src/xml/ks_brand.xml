@@ -8,12 +8,12 @@
                 <a t-att-href="'/shop?filter=brand_' + record.brand_name" class='text-center'>
                     <div class='flex-column justify-content-center'>
                         <div class='brand__img rounded-circle m-auto'>
-                            <img t-att-src="'/web/image/ks_product_manager.ks_brand/' + record.brand_id + '/ks_image'"/>
+                            <img t-att-src="'/web/image/ks_product_manager.ks_brand/' + record.brand_id + '/ks_image/150x150'"/>
                         </div>
                     </div>
                 </a>
                 <div class='brand__logo position-relative bg-white flex-center m-auto'>
-                    <img t-att-src="'/web/image/ks_product_manager.ks_brand/'+ record.brand_id +'/ks_brand_logo'" class="w-100"/>
+                    <img t-att-src="'/web/image/ks_product_manager.ks_brand/'+ record.brand_id +'/ks_brand_logo/150x150'" class="w-100"/>
                 </div>
             </div>
             </t>

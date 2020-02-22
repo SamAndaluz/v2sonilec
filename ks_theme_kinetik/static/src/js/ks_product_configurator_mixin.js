@@ -9,7 +9,15 @@ odoo.define('ks_theme_kinetik.ProductConfiguratorMixin', function (require) {
          * @override
          */
         _onChangeCombination: function (){
+            arguments[1] = arguments[1].parent();
             this._super.apply(this, arguments);
+            var per_disc = ((arguments[2].list_price - arguments[2].price)/arguments[2].list_price)*100;
+            if (per_disc){
+                $('.Percentage-offer').html('( ' + Math.floor(per_disc) + '% OFF)');
+            }
+            else{
+                $('.Percentage-offer').html("")
+            }
             var seconds = arguments[2].seconds;
             if(seconds){
            $('.ks_product_timer_title').removeClass("d-none");
