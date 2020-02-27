@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="invoice_form_picking">
+      <field name="name">invoice_form_picking</field>
+      <field name="model">account.invoice</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//div[@name='button_box']" position="inside">
+          <button name="action_view_picking" type="object" class="oe_stat_button" icon="fa-pencil-square-o"
+            attrs="{'invisible': [('picking_count', '=', 0)]}" >
+              <field name="picking_count" widget="statinfo" string="Movimientos"/>
+          </button>
+        </xpath>
+        <xpath expr='//page[@name="other_info"]/group/group/field[@name="journal_id"]' position="after">
+          <field name='create_return'
+            groups="prodigia_invoice_picking.invoice_picking_user"/>
+          <field name='warehouse_id'
+            groups="prodigia_invoice_picking.invoice_picking_user"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="invoice_supplier_form_picking">
+      <field name="name">invoice_supplier_form_picking</field>
+      <field name="model">account.invoice</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="account.invoice_supplier_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//sheet/div" position="before">
+          <div class="oe_button_box" name="button_box">
+            <button name="action_view_picking" type="object" class="oe_stat_button" icon="fa-pencil-square-o"
+            attrs="{'invisible': [('picking_count', '=', 0)]}" >
+              <field name="picking_count" widget="statinfo" string="Movimientos"/>
+            </button>
+          </div>
+        </xpath>
+
+        <xpath expr='//page[@name="other_info"]/group/group/field[@name="journal_id"]' position="after">
+          <field name='create_return' 
+            groups="prodigia_invoice_picking.invoice_picking_user"/>
+          <field name='warehouse_id' 
+            groups="prodigia_invoice_picking.invoice_picking_user"/>
+        </xpath>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>

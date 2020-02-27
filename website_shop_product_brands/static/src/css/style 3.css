@@ -1,0 +1,39 @@
+.brand_carousel .carousel-inner .brand_name {
+  padding-right: 140px;
+}
+.brand_carousel .carousel-inner .carousel-item.active,
+.brand_carousel .carousel-inner .carousel-item-next,
+.brand_carousel .carousel-inner .carousel-item-prev {
+  display: flex;
+  margin-left: 60px;
+}
+.brand_carousel .carousel-inner .carousel-item-right.active,
+.brand_carousel .carousel-inner .carousel-item-next {
+  transform: translateX(25%);
+}
+.brand_carousel .carousel-inner .carousel-item-left.active, 
+.brand_carousel .carousel-inner .carousel-item-prev {
+  transform: translateX(-25%);
+}
+.brand_carousel .carousel-inner .carousel-item-right,
+.brand_carousel .carousel-inner .carousel-item-left{ 
+  transform: translateX(0); 
+}
+.brand_carousel .carousel-control-prev,
+.brand_carousel .carousel-control-next {
+  width: 6%;
+}
+.brand_carousel .carousel-control-prev {
+  background-image: linear-gradient(to right,rgba(0,0,0,.2) 0,rgba(0,0,0,.0001) 100%);
+}
+.brand_carousel .carousel-control-next {
+  background-image: linear-gradient(to left,rgba(0,0,0,.2) 0,rgba(0,0,0,.0001) 100%);
+}
+.brand_carousel .carousel-control-prev-icon,
+.brand_carousel .carousel-control-next-icon {
+  display: none;
+}
+.brand_carousel:hover .carousel-control-prev-icon,
+.brand_carousel:hover .carousel-control-next-icon {
+  display: block;
+}

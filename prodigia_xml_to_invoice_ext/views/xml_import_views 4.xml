@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+
+
+    <record id="xml_import_wizard_ext" model="ir.ui.view">
+      <field name="name">xml_import_wizard_ext</field>
+      <field name="model">xml.import.wizard</field>
+      <field name="inherit_id" ref="prodigia_xml_to_invoice.xml_import_wizard"/>
+      <field name="arch" type="xml">
+        <field name='journal_id' position='after'>
+          <field name="payment_journal_id" attrs="{'invisible':[('invoice_type','!=','out_invoice')]}"/>
+        </field>
+        <field name='create_product' position='replace'>
+          <field name="create_product" invisible="1"/>
+        </field>
+
+        <!-- requerido solo cuando es para cargar xml de proveedor -->
+        <field name="journal_id" position='replace'>
+          <field name='journal_id' attrs="{'required':[('invoice_type','=','in_invoice')]}"/>
+        </field>
+
+        <field name='invoice_type' position='before'>
+          <field name="company_id" invisible="0"/>
+        </field>
+
+        <field name='create_product' position='after'>
+          <field name="products_valid" invisible='1'/>
+          <field name="products_error_msg" invisible='1'/>
+          <field name='warehouse_id' attrs="{'invisible':[('invoice_type','!=','out_invoice')]}"/>
+        </field>
+      </field>
+    </record>
+
+  </data>
+</odoo>

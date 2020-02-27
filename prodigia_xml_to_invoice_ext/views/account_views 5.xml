@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+
+
+    <record model="ir.ui.view" id="view_account_form_gas_default">
+      <field name="name">view_account_form_gas_default</field>
+      <field name="model">account.account</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="account.view_account_form"/>
+      <field name="arch" type="xml">
+        <field name='deprecated' position='after'>
+          <field name='gas_default' />
+        </field>
+      </field>
+    </record>
+
+  </data>
+</odoo>

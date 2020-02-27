@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_xml_to_invoice_extended_xml_to_invoice_extended,xml_to_invoice_extended.xml_to_invoice_extended,model_xml_to_invoice_extended_xml_to_invoice_extended,,1,0,0,0

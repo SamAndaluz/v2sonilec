@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record id="invoice_picking_user" model="res.groups"> 
+        <field name="name">Creacion de movimientos de almacen en facturas</field>
+    </record>
+
+    </data>
+</openerp>

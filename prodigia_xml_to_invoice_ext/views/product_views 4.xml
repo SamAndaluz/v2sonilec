@@ -1,0 +1,31 @@
+<odoo>
+  <data>
+
+
+    <record model="ir.ui.view" id="product_template_only_form_view_custom_name">
+      <field name="name">product_template_only_form_view_custom_name</field>
+      <field name="model">product.template</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <field name="arch" type="xml">
+        <field name="default_code" position="after">
+          <field name="custom_name" readonly='0'/>
+        </field>
+      </field>
+    </record>
+
+
+  <record model="ir.ui.view" id="product_normal_form_view_custom_name">
+      <field name="name">product_normal_form_view_custom_name</field>
+      <field name="model">product.product</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="product.product_normal_form_view"/>
+      <field name="arch" type="xml">
+        <field name="default_code" position="after">
+          <field name="custom_name" readonly='1'/>
+        </field>
+      </field>
+    </record>
+
+  </data>
+</odoo>
